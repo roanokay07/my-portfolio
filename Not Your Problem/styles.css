@@ -1,0 +1,241 @@
+/*----------------- Begin -----------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/*----------------- Social Buttons part -----------------*/
+
+#social-links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  z-index: 999; /* Ensure the buttons are above other content */
+}
+
+/* Social button common styles */
+.social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #333;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:hover:before {
+  opacity: 1;
+}
+
+/* Facebook button style */
+.facebook {
+    background-color: #4267B2;
+}
+
+/* Instagram button style */
+.instagram {
+  background-color: #E1306C;
+}
+
+/* Discord button style */
+.discord {
+  background-color: #7289DA;
+}
+
+/* Hover effect for social buttons */
+.social-btn:hover {
+  opacity: 0.8;
+}
+
+/*----------------- Notification part -----------------*/
+
+.notification {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: #fff;
+  border-radius: 10px; /* Add rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(200%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.notification.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.notification-message {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Instagram notification style */
+.notification-instagram {
+  background-color: #E1306C; /* Instagram-like pink background */
+}
+
+/* Facebook notification style */
+.notification-facebook {
+  background-color: #4267B2; /* Facebook blue background */
+}
+
+/* Discord notification style */
+.notification-discord {
+  background-color: #7289DA; /* Discord gray background */
+}
+
+/* Icon styles */
+.notification i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.notification span {
+  animation: fadeInOut 5s linear;
+}
+
+/*----------------- Button part -----------------*/
+
+
+.about-button-container {
+  text-align: center; 
+  margin-top: 20px; 
+}
+
+.about-button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff4081, #ff8c00, #ffeb3b, #4caf50, #2196f3, #9c27b0, #ff4081);
+  background-size: 600% 100%;
+  animation: rainbow 8s linear infinite;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for the rainbow background */
+@keyframes rainbow {
+  0%, 100% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/*----------------- Animatii part -----------------*/
+
+.skill-bars {
+  align-items: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  animation: expand-bar 1s ease;
+}
+
+@keyframes expand-bar {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.home {
+  text-align: center;
+  opacity: 0; /* Set initial opacity to 0 */
+  animation: fadeIn 2s forwards; /* Apply the fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.home h1 {
+  font-size: 36px;
+  color: #333;
+  margin-top: 100px;
+}
+
